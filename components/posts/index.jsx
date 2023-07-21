@@ -31,7 +31,7 @@ function PostsPage() {
 					<PostCard data={b} />
 				))}
 			</div>
-			{opened && <AddPost opened={opened} setOpened={setOpened} />}
+			{opened && <AddPost opened={opened} setOpened={setOpened} data={null}/>}
 		</>
 	);
 }

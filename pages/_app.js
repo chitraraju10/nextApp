@@ -19,7 +19,7 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }) {
 	const router = useRouter();
-	const [loading, setLoading] = useState(true);
+	// const [loading, setLoading] = useState(true);
 
 	// useEffect(() => {
 	// 	router.replace('/auth/login').then(() => setLoading(false));

@@ -7,13 +7,7 @@ import PostCard from './components/postCard';
 function PostsPage() {
 	const [opened, setOpened] = useState(false);
 	const router = useRouter();
-	// const { uuid } = router.query;
-
-	// const backendFormat = {
-	// 	body: {
-	// 		uuid: uuid,
-	// 	},
-	// };
+	
 
 	const { data: viewReportData } = useGetBlogsQuery();
 
@@ -21,7 +15,7 @@ function PostsPage() {
 		<>
 			<div className="flex justify-end p-10">
 				<button
-					className="bg-[#FB7C51] pl-5 pr-5 p-3 rounded-md"
+					className="bg-[#FB7C51] pl-5 pr-5 mt-16 p-3 rounded-md"
 					onClick={() => setOpened(true)}>
 					Add Blog
 				</button>

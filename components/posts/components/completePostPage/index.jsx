@@ -5,17 +5,15 @@ function CompletePost() {
     const {query} = useRouter()
     const { data: viewReportData } = useGetBlogsQuery();
 
-    const data = viewReportData?.filter((p) => p?.id == query.id)
-
-    console.log('data:',data)
+    const BlogData = viewReportData?.filter((p) => p?.id == query.id)
 
   	return (
 		<div className="m-auto prose p-10">
 			<div>
 				<h1 className="text-[28px] font-semibold">
-					{data[0]?.title || 'Loading...'}
+					{BlogData[0]?.title}
 				</h1>
-                <p>{data[0]?.description || 'Loading...'}</p>
+                <p>{BlogData[0]?.description}</p>
 			</div>
 		</div>
 	);

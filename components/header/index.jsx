@@ -6,7 +6,7 @@ function Header() {
 	const router = useRouter()
 	
 	return (
-		<div className="bg-black/80 h-16 flex justify-between items-center pl-10 pr-10">
+		<div className="bg-black/80 h-16 flex justify-between items-center pl-10 pr-10 fixed w-full">
 			<Link href="/home">
 				<p className="text-white text-xl font-semibold">Next App</p>
 			</Link>
@@ -21,13 +21,12 @@ function Header() {
 						Blogs
 					</p>
 				</Link>
-				<Avatar
-					component="a"
-					// href="https://github.com/rtivital"
-					target="_blank"
-					src="/assets/images/avatar.png"
-					alt="it's me"
-				/>
+				<Link href="/contactUs">
+					<p className={`${router?.asPath === '/contactUs' ? 'text-orange-500 text-xl font-semibold pr-10' : 'text-white text-xl font-semibold pr-10'}`}>
+						contact Us
+					</p>
+				</Link>
+				
 			</div>
 		</div>
 	);

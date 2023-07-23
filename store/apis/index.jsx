@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
-	tagTypes: ['blogs'],
+	tagTypes: ['blogs', 'contacts'],
 	reducerPath: 'api',
 	baseQuery: fetchBaseQuery({
 		baseUrl: 'http://localhost:4000',
@@ -44,6 +44,15 @@ export const api = createApi({
 			},
 			invalidatesTags: ['blogs'],
 		}),
+
+		createContact: builder.mutation({
+			query: (body) => ({
+				url: '/contacts',
+				method: 'POST',
+				body,
+			}),
+			invalidatesTags: ['contacts'],
+		}),
 	}),
 });
 
@@ -52,6 +61,7 @@ export const {
 	useCreateBlogMutation,
 	useDeletePostMutation,
 	useUpdateBlogMutation,
+	useCreateContactMutation
 } = api;
 
 export default api;

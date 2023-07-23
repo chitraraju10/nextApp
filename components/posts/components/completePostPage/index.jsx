@@ -8,7 +8,7 @@ function CompletePost() {
     const data = viewReportData?.filter((p) => p?.id == query.id)
 
   	return (
-		<div className="m-auto p-10">
+		<div className="m-auto prose p-10">
 			<div>
 				
 				{/* <p className="text-[#737373]">{data[0]?.published_date}</p> */}

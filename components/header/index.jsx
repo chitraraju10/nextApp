@@ -8,7 +8,7 @@ function Header() {
 	return (
 		<div className="bg-black/80 h-16 flex justify-between items-center pl-10 pr-10">
 			<Link href="/home">
-				<p className="text-white text-xl font-semibold">LearnHub</p>
+				<p className="text-white text-xl font-semibold">Next App</p>
 			</Link>
 			<div className="flex ">
 				<Link href="/home">

@@ -1,28 +1,22 @@
 import { useRouter } from 'next/router';
-import { useGetBlogsQuery } from '@/store/apis';
+import { useGetBlogQuery } from '@/store/apis';
 
 function CompletePost() {
-    const {query} = useRouter()
-    const { data: viewReportData } = useGetBlogsQuery();
+	const { query } = useRouter();
+	const { data: viewReportData } = useGetBlogQuery({
+		id: query.id,
+	});
 
-    const BlogData = viewReportData?.filter((p) => p?.id == query.id)
-
-  	return (
-		<div className="m-auto prose p-10">
+	return (
+		<div className="m-auto prose pt-36">
 			<div>
 				<h1 className="text-[28px] font-semibold">
-					{BlogData[0]?.title}
+					{viewReportData?.title}
 				</h1>
-                <p>{BlogData[0]?.description}</p>
+				<p>{viewReportData?.description}</p>
 			</div>
 		</div>
 	);
 }
 
 export default CompletePost;
-
-
-
-
-
-

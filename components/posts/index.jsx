@@ -6,8 +6,6 @@ import PostCard from './components/postCard';
 
 function PostsPage() {
 	const [opened, setOpened] = useState(false);
-	const router = useRouter();
-	
 
 	const { data: viewReportData } = useGetBlogsQuery();
 
@@ -22,10 +20,12 @@ function PostsPage() {
 			</div>
 			<div className="grid grid-cols-4">
 				{viewReportData?.map((b) => (
-					<PostCard data={b} />
+					<PostCard key={b?.id} data={b} />
 				))}
 			</div>
-			{opened && <AddPost opened={opened} setOpened={setOpened} data={null}/>}
+			{opened && (
+				<AddPost opened={opened} setOpened={setOpened} data={null} />
+			)}
 		</>
 	);
 }

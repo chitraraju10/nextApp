@@ -8,14 +8,28 @@ export const api = createApi({
 	}),
 	refetchOnFocus: true,
 	refetchOnReconnect: true,
+
 	endpoints: (builder) => ({
+		// getBlogs: builder.query({
+		// 	query: '/blogs/',
+		// 	providesTags: ['blogs'],
+		// }),
+
+		// getBlog: builder.query({
+		// 	query: (id) => `/blogs/${id}`,
+		// 	providesTags: ['blogs'],
+		// }),
+
 		getBlogs: builder.query({
-			query: () => ({
-				url: '/blogs/',
-				method: 'Get',
-			}),
+			query: (data) => '/blogs',
 			providesTags: ['blogs'],
 		}),
+
+		getBlog: builder.query({
+			query: (data) => `/blogs/${data?.id}`,
+			providesTags: ['blogs'],
+		}),
+
 		createBlog: builder.mutation({
 			query: (body) => ({
 				url: '/blogs',
@@ -24,8 +38,9 @@ export const api = createApi({
 			}),
 			invalidatesTags: ['blogs'],
 		}),
+
 		updateBlog: builder.mutation({
-			query({ id,body }) {
+			query({ id, body }) {
 				return {
 					url: `/blogs/${id}`,
 					method: 'PUT',
@@ -61,7 +76,8 @@ export const {
 	useCreateBlogMutation,
 	useDeletePostMutation,
 	useUpdateBlogMutation,
-	useCreateContactMutation
+	useCreateContactMutation,
+	useGetBlogQuery,
 } = api;
 
 export default api;

@@ -37,7 +37,7 @@ function Header() {
 								? 'text-orange-500 text-xl font-semibold pr-10'
 								: 'text-white text-xl font-semibold pr-10'
 						}`}>
-						contact Us
+						Contact Us
 					</p>
 				</Link>
 			</div>

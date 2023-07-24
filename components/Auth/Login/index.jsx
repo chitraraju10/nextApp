@@ -4,8 +4,6 @@ import { PasswordInput } from '@mantine/core';
 import { useRouter } from 'next/router';
 
 function LoginPage(props) {
-	const userName = 'chitra.raju';
-	const PassWord = 'Abcd.1234';
 	const router = useRouter();
 	const {
 		handleSubmit,
@@ -22,11 +20,7 @@ function LoginPage(props) {
 	};
 
 	const onSuccessfullLogin = (data) => {
-		if (data?.email === userName && data?.password === PassWord) {
-			router?.replace('/home');
-		}
-		router?.replace('/home');
-		// router?.replace('/auth/login');
+		console.log({ ...data, type: props?.type });
 	};
 
 	return (
@@ -66,11 +60,13 @@ function LoginPage(props) {
 					/>
 					{getFormErrorMessage('password')}
 					<div className="flex justify-center ">
-						<button className="bg-[#1FBED6] pl-10 pr-10 rounded-md p-2 w-cover text-white m-5">
+						<button
+							className="bg-[#1FBED6] pl-10 pr-10 rounded-md p-2 w-cover text-white m-5"
+							onClick={() => router?.replace('/auth/login')}>
 							Sign in
 						</button>
 						<button
-							type="button"
+							// type="button"
 							onClick={() => router?.replace('/auth/signUp')}
 							className="border-[#1FBED6] border-2 pl-10 pr-10 rounded-md p-2 w-cover text-[#1FBED6] m-5">
 							Sign Up

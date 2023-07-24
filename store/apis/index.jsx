@@ -10,16 +10,6 @@ export const api = createApi({
 	refetchOnReconnect: true,
 
 	endpoints: (builder) => ({
-		// getBlogs: builder.query({
-		// 	query: '/blogs/',
-		// 	providesTags: ['blogs'],
-		// }),
-
-		// getBlog: builder.query({
-		// 	query: (id) => `/blogs/${id}`,
-		// 	providesTags: ['blogs'],
-		// }),
-
 		getBlogs: builder.query({
 			query: (data) => '/blogs',
 			providesTags: ['blogs'],

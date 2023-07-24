@@ -19,15 +19,7 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }) {
 	const router = useRouter();
-	// const [loading, setLoading] = useState(true);
-
-	// useEffect(() => {
-	// 	router.replace('/auth/login').then(() => setLoading(false));
-	// }, []);
-
-	// if (loading) {
-	// 	return <p>Loading...</p>;
-	// }
+	
 
 	return (
 		<ReduxProvider store={store}>

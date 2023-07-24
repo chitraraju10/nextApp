@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import AddPost from './components/addPost';
-import { useRouter } from 'next/router';
 import { useGetBlogsQuery } from '@/store/apis';
 import PostCard from './components/postCard';
 
